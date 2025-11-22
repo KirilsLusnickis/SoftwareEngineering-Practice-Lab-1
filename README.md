@@ -176,6 +176,7 @@ if __name__ == "__main__":
 ```
 
 ## Basis Path Analysis
+![Runner output](SoftwareEngineering-Practice/results/TestingPathGraph.png)
 - Cyclomatic complexity V(G) = E - N + 2 for a single connected component; from the 5 decision points in `classify_triangle` → V(G)=6 independent paths.
 - Identified paths:
   - P1: non-positive side → INVALID_NONPOSITIVE
