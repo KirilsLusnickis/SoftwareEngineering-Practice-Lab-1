@@ -176,7 +176,7 @@ if __name__ == "__main__":
 ```
 
 ## Basis Path Analysis
-![Runner output](SoftwareEngineering-Practice/results/TestingPathGraph.png)
+![Runner output](SoftwareEngineering-Practice/results/TestingPathGraphv2.png)
 - Cyclomatic complexity for classify_triangle
 
 - Method 1 (Edges-Nodes+2):
