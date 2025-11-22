@@ -177,6 +177,29 @@ if __name__ == "__main__":
 
 ## Basis Path Analysis
 ![Runner output](SoftwareEngineering-Practice/results/TestingPathGraph.png)
+- Cyclomatic complexity for classify_triangle
+
+- Method 1 (Edges-Nodes+2):
+  - Nodes N = 13 (start, 5 decision nodes, 7 processing/return nodes)
+  - Edges E = 12
+  - V(G) = E - N + 2 = 12 - 13 + 2 = 1  (for minimal connected graph)
+  - For predicate-based calculation within function body: V(G) = number_of_decisions + 1 = 5 + 1 = 6 (used for basis paths)
+
+- Method 2 (Predicate nodes):
+  - Predicate nodes = 5 (each if/elif condition)
+  - V(G) = 5 + 1 = 6
+
+- Method 3 (Regions):
+  - For a single connected CFG, number of regions equals V(G). Counting enclosed regions yields 6.
+
+- Independent basis paths (6):
+  - P1: 1-2-3 (non-positive side)
+  - P2: 1-2-4-5-6 (triangle inequality fail)
+  - P3: 1-2-4-5-7-8 (equilateral)
+  - P4: 1-2-4-5-7-9-10 (isosceles)
+  - P5: 1-2-4-5-7-9-11-12 (right scalene)
+  - P6: 1-2-4-5-7-9-11-13 (scalene)
+
 - Cyclomatic complexity V(G) = E - N + 2 for a single connected component; from the 5 decision points in `classify_triangle` → V(G)=6 independent paths.
 - Identified paths:
   - P1: non-positive side → INVALID_NONPOSITIVE
